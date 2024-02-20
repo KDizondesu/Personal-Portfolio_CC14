@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif'
+}
+
+header {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+body{
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, rgb(182, 244, 146), rgb(14, 139, 66));;
+}
+
+.container{
+    max-width: 1500px;
+    width: 90%;
+    background-color: #ffffff;
+    padding: 30px 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+	margin:auto;
+}
+
+.container nav{
+    position: relative;
+    height: 50px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container nav::after{
+    content: "";
+    background: silver;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 47px;
+    filter: blur(0.5px);
+}
+
+.container nav label{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#blog:checked ~ nav label .Home,
+#blog:checked ~ nav label .Activities,
+#blog:checked ~ nav label .About,
+#blog:checked ~ nav label .Contact{
+    color: rgb(60, 100, 4);
+}
+
+input[type='radio']{
+    display: none;
+}
+
+.container nav .slider{
+    position: absolute;
+    height: 4.5px;
+    background-color: rgb(60, 100, 4);
+    border-radius: 20px;
+    width: 25%;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    transition: all 0.3s ease;
+    filter: blur(0.4px);
+}
+
+#Activities:checked ~ nav .slider{
+    left: 25%;
+}
+
+#About:checked ~ nav .slider{
+    left: 50%;
+}
+
+#Contact:checked ~ nav .slider{
+    left: 75%;
+}
+
+#Home:checked ~ nav .Home{
+    color: rgb(60, 100, 4);
+}
+
+#Activities:checked ~ nav .Activities{
+    color: rgb(60, 100, 4);
+}
+
+#About:checked ~ nav .About{
+    color: rgb(60, 100, 4);
+}
+
+#Contact:checked ~ nav .Contact{
+    color: rgb(60, 100, 4);
+}
+
+section{
+    filter: blur(0.3px);
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section .content{
+    display: none;
+    margin-bottom: 20px;
+}
+
+section .content .title{
+    font-size: 21px;
+    font-weight: 600;
+    margin: 30px 0 10px 0;
+}
+
+#Home:checked ~ section .cont-1{
+    display: block;
+}
+
+#Activities:checked ~ section .cont-2{
+    display: block;
+}
+
+#About:checked ~ section .cont-3{
+    display: block;
+}
+
+#Contact:checked ~ section .cont-4{
+    display: block;
+}
+
+summary{
+    padding: 1em;
+    background: rgb(107, 110, 107);
+    margin-bottom: 1em;
+    cursor: pointer;
+    outline: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.code{
+    width: 200px;
+    height: 500px;
+    overflow: scroll;
+}
